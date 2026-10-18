@@ -1,0 +1,49 @@
+/* Глобально: только сброс и переменные. Стили компонентов лежат в *.module.css */
+:root {
+  --paper: #ffffff;
+  --paper-alt: #f3f4f2;
+  --ink: #1c1c1c;
+  --ink-soft: #5e625f;
+  --line: #dadddA;
+  --green: #1f4d3a;
+  --green-dark: #163829;
+  --wood: #7a5638;
+  --wood-dark: #553823;
+  --danger: #a8322d;
+
+  --font-book: 'Literata', Georgia, serif;
+  --font-ui: 'Golos Text', 'Segoe UI', Roboto, sans-serif;
+
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,51 @@
+.cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 1px 3px 3px 1px;
+  background: var(--paper-alt);
+  /* слева тёмная полоса корешка, снизу тень на полку */
+  box-shadow:
+    inset 3px 0 0 rgb(0 0 0 / 0.18),
+    2px 2px 6px rgb(0 0 0 / 0.22);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 16% 12% 14%;
+  color: #fff;
+}
+
+.phAuthor {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.phTitle {
+  font-family: var(--font-book);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.novel {
+  background: #6e2f24;
+}
+
+.scifi {
+  background: #263a56;
+}
+
+.it {
+  background: var(--green);
+}

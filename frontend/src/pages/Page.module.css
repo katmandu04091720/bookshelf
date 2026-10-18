@@ -1,0 +1,293 @@
+/* Общие стили страниц */
+.title {
+  margin: 0 0 8px;
+  font-family: var(--font-book);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.lead {
+  max-width: 60ch;
+  margin: 0 0 32px;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.subtitle {
+  margin: 48px 0 16px;
+  font-family: var(--font-book);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+/* Полка: колонки без зазора, чтобы планки шли сплошной линией */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  column-gap: 0;
+  row-gap: 48px;
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .shelf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Вкладки жанров */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 0 0 36px;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.tab {
+  margin-bottom: -1px;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.tabActive {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: var(--green);
+}
+
+/* Кнопки */
+.button {
+  display: inline-block;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--green-dark);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonGhost {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.buttonGhost:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.more {
+  margin: 40px 0 0;
+}
+
+.textLink {
+  color: var(--green);
+  text-underline-offset: 3px;
+}
+
+.panel {
+  padding: 28px;
+  background: var(--paper-alt);
+  border-radius: 4px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--ink-soft);
+  text-underline-offset: 3px;
+}
+
+.back:hover {
+  color: var(--green);
+}
+
+/* Страница книги */
+.details {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detailsCover {
+  width: 100%;
+}
+
+.detailsAuthor {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.description {
+  max-width: 62ch;
+  margin: 20px 0 24px;
+  font-family: var(--font-book);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 24px;
+  margin: 0 0 28px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  color: var(--ink-soft);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .details {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .detailsCover {
+    max-width: 220px;
+  }
+}
+
+/* Формы */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 380px;
+}
+
+.formWide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 12px;
+  border: 1px solid #b9bdb9;
+  border-radius: 3px;
+  background: var(--paper);
+  font: inherit;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: -1px;
+  border-color: var(--green);
+}
+
+.inputError {
+  border-color: var(--danger) !important;
+}
+
+.fieldError {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+.formError {
+  padding: 10px 14px;
+  border-left: 4px solid var(--danger);
+  background: #fbefee;
+  color: var(--danger);
+}
+
+.formSuccess {
+  padding: 10px 14px;
+  border-left: 4px solid var(--green);
+  background: #e8f0ec;
+}
+
+.hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.fullRow {
+  grid-column: 1 / -1;
+}
+
+/* Список книг в кабинете */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.listItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.listItem a {
+  text-underline-offset: 3px;
+}
+
+/* 404 */
+.notFound {
+  max-width: 560px;
+  padding: 24px 0 40px;
+}
